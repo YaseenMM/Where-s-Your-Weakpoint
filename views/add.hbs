@@ -1,0 +1,17 @@
+<h1>{{{message}}}</h1>
+
+<h1>Where I you need to improve?</h1>
+<p>All you'll need to do is provide me with some key information, and I'll tell you where you could improve!</p>
+<p> For your lifts, be sure to input <b> the heaviest weight you've ever done.</b></p>
+<form method="POST" action="/add">
+<h2>Gender:</h2><input type="radio" name="gender" value="male">Male<br>
+<input type="radio" name="gender" value="female">Female<br>
+<input type="radio" name="gender" value="NB">Non-Binary (will use male strength standards)<br>
+<h2> Weight in lbs: </h2><input type="text" name="weight"> 
+<h2>Bench Press: </h2> <input type = "text" name="b_weight"> (weight) x <input type = "text" name ="b_reps"> (reps)<br>
+<h2>Squat: </h2> <input type = "text" name="s_weight"> (weight) x <input type = "text" name ="s_reps"> (reps)<br>
+<h2>Deadlift: </h2> <input type = "text" name="d_weight"> (weight) x <input type = "text" name ="d_reps"> (reps)<br>
+<h2>Overhead Press: </h2> <input type = "text" name="o_weight"> (weight) x <input type = "text" name ="o_reps"> (reps)<br>
+<h2>Bent-Over Row: </h2> <input type = "text" name="r_weight"> (weight) x <input type = "text" name ="r_reps"> (reps)<br>
+<br><input type="submit" value="Submit my lifts!"> 
+</form>

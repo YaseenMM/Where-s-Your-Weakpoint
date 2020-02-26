@@ -1,0 +1,20 @@
+<h1>So if you just wanna cut to the chase, here are all the exercises you can possibly get from a report.</h1>
+<h2>Filter based on body part!</h2>
+<form action="/all" method="POST">
+<input type="radio" name="part" value="Chest">Chest<br>
+<input type="radio" name="part" value="Shoulders">Shoulders<br>
+<input type="radio" name="part" value="Triceps">Triceps<br>
+<input type="radio" name="part" value="Abs">Abs<br>
+<input type="radio" name="part" value="Biceps">Biceps<br>
+<input type="radio" name="part" value="Quads">Quads<br>
+<input type="radio" name="part" value="Hamstrings">Hamstrings<br>
+<input type="radio" name="part" value="Glutes">Glutes<br>
+<input type="radio" name="part" value="Forearms">Forearms<br>
+<input type="submit" value="Submit!">
+</form>
+
+{{#each items}}
+       <li><a href={{Links.[0]}}>{{Exercises.[0]}}</a></li>
+        <li><a href={{Links.[1]}}>{{Exercises.[1]}}</a></li>
+
+{{/each}}

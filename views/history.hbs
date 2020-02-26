@@ -1,0 +1,83 @@
+
+<table>
+    <tr>
+        <th>Date</th>
+        <th>Gender</th>
+        <th>Weight</th>
+        <th>Bench Reps</th>
+        <th>Bench Sets</th>
+        <th>Squat Reps</th>
+        <th>Squat Sets</th>
+        <th>Deadift Reps</th>
+        <th>Deadlift Sets</th>
+        <th>OHP Reps</th>
+        <th>OHP Sets</th>
+        <th>Row Reps</th>
+        <th>Row Sets</th>
+    </tr>
+    {{#each Inputs}}
+    <tr>
+        <td>{{this.date}}</td>
+        <td>{{this.gender}}</td>
+        <td>{{this.weight}}</td>
+        <td>{{this.bench_reps}}</td>
+        <td>{{this.bench_sets}}</td>
+        <td>{{this.squat_reps}}</td>
+        <td>{{this.squat_sets}}</td>
+        <td>{{this.deadlift_reps}}</td>
+        <td>{{this.deadlift_sets}}</td>
+        <td>{{this.ohp_reps}}</td>
+        <td>{{this.ohp_sets}}</td>
+        <td>{{this.row_reps}}</td>
+        <td>{{this.row_sets}}</td>
+    </tr>
+    {{/each}}
+</table><br>
+<h1> Find general male strength standard graph for...</h1>
+<form>
+    <input type="radio" name="exercise" value="bench"> Bench Press <br>
+    <input type="radio" name="exercise" value="squat"> Squat <br>
+    <input type="radio" name="exercise" value="deadlift"> Deadlift <br>
+    <input type="radio" name="exercise" value="ohp"> Overhead Press <br>
+    <input type="radio" name="exercise" value="row"> Row <br>
+    <input type="submit" value="Submit">
+</form>
+<h1> {{answer}}</h1>
+<input type="hidden" id="data" value={{data}}/>
+<input type ="hidden" id="labels" value={{labels}}/>
+
+<canvas id="bar-chart" width="800" height="450"></canvas>
+<script>
+  const trueType = '{{type}}';
+  const Bdata = '{{data}}';
+  console.log(Bdata);
+  let trueData = Bdata.split(',');
+  console.log(trueData);
+  const trueLabels = '{{labels}}';
+  console.log(trueLabels);
+  let superLabels = trueLabels.split(',');
+  console.log(superLabels);
+//let g = document.getElementById("data").value;
+//let e = document.getElementById("labels").value;
+// Bar chart
+new Chart(document.getElementById("bar-chart"), {
+    type: 'bar',
+    data: {
+      labels: superLabels,
+      datasets: [
+        {
+          label: "Weight in Pounds ",
+          backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
+          data: trueData
+        }
+      ]
+    },
+    options: {
+      legend: { display: false },
+      title: {
+        display: true,
+        text: trueType + ' Weight, as described as a ratio of ones bodyweight'
+      }
+    }
+});
+</script>

@@ -1,0 +1,16 @@
+<h2> This page features a list of all the weakpoints gained from your reports.</h2>
+{{#each Reports}}
+<h1> Report Date: {{this.date}}</h1>
+<h2> Weakpoint: <a href='/{{this.weakpoint}}'>{{this.weakpoint}}</a></h2>
+<p> More information, of course:
+    <li> Your bench was rated as: {{this.bench_rating}}</li>
+    <li> Your squat was rated as: {{this.squat_rating}}</li>
+    <li> Your deadlift was rated as: {{this.deadlift_rating}}</li>
+    <li> Your OHP was rated as: {{this.ohp_rating}}</li>
+    <li> Your row was rated as: {{this.row_rating}}</li>
+</p>
+{{/each}}
+
+<h2> Click <a href="/graph">here</a> to see how you've done over time for each exercise.</h2>
+
+<h2> You can visit the "All Corrective Exercises" on the top of the page to find out how to fix any weakpoints. Or if you just like exercises. Or whatever reason! </h2>

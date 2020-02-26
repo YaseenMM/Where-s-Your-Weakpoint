@@ -1,0 +1,57 @@
+<canvas id="line-chart" width="800" height="450"></canvas>
+
+<script>
+let rdateArray = '{{dates}}';
+console.log(rdateArray);
+let rbenchArray = '{{bench}}';
+let rsquatArray = '{{squat}}';
+let rdeadliftArray = '{{deadlift}}';
+let rohpArray = '{{ohp}}';
+let rrowArray = "{{row}}";
+let dateArray = rdateArray.split(',');
+console.log(dateArray);
+let benchArray = rbenchArray.split(',');
+let squatArray = rsquatArray.split(',');
+let deadliftArray = rdeadliftArray.split(',');
+let ohpArray = rohpArray.split(',');
+let rowArray = rrowArray.split(',');
+new Chart(document.getElementById("line-chart"), {
+  type: 'line',
+  data: {
+    labels: dateArray,
+    datasets: [{ 
+        data: benchArray,
+        label: "Bench1RM",
+        borderColor: "#3e95cd",
+        fill: false
+      }, { 
+        data: squatArray,
+        label: "Squat1RM",
+        borderColor: "#8e5ea2",
+        fill: false
+      }, { 
+        data: deadliftArray,
+        label: "Deadlift1RM",
+        borderColor: "#3cba9f",
+        fill: false
+      }, { 
+        data: ohpArray,
+        label: "OHP1RM",
+        borderColor: "#e8c3b9",
+        fill: false
+      }, { 
+        data: rowArray,
+        label: "Row1RM",
+        borderColor: "#c45850",
+        fill: false
+      }
+    ]
+  },
+  options: {
+    title: {
+      display: true,
+      text: 'Calculated 1RM for each lift over time'
+    }
+  }
+});
+</script>
