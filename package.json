@@ -19,7 +19,7 @@
   "dependencies": {
     "body-parser": "^1.19.0",
     "bootstrap": "^4.3.1",
-    "chart.js": "^2.9.2",
+    "chart.js": "^2.9.4",
     "chartjs": "^0.3.24",
     "cookie-parser": "^1.4.4",
     "express": "^4.17.1",
